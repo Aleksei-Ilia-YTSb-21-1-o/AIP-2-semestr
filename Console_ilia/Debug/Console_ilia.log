@@ -1,2 +1,7 @@
-﻿  LINK : не найден или не выполнена сборка D:\VS_Prodgect\Console_ilia\Debug\Console_ilia.exe при последней инкрементной компоновке; выполняется полная компоновка
+﻿  main.cpp
+D:\VS_Prodgect\Console_ilia\Console_ilia\main.cpp(90,33): warning C4305: инициализация: усечение из "double" в "float"
+D:\VS_Prodgect\Console_ilia\Console_ilia\main.cpp(91,33): warning C4305: инициализация: усечение из "double" в "float"
+D:\VS_Prodgect\Console_ilia\Console_ilia\main.cpp(92,31): warning C4305: инициализация: усечение из "double" в "float"
+D:\VS_Prodgect\Console_ilia\Console_ilia\main.cpp(93,35): warning C4305: инициализация: усечение из "double" в "float"
+D:\VS_Prodgect\Console_ilia\Console_ilia\main.cpp(94,31): warning C4305: инициализация: усечение из "double" в "float"
   Console_ilia.vcxproj -> D:\VS_Prodgect\Console_ilia\Debug\Console_ilia.exe
