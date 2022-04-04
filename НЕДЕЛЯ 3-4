@@ -1,0 +1,84 @@
+//3 задание г (g) 3-4 week
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+int main()
+{
+    float r = 1, R = 2; // радиус окружности
+    float x, y;
+    std::cin >> x >> y;
+    float l;
+    l = sqrt(x * x + y * y);
+    if ((l > r) && (l < R))
+        std::cout << "Yes" << std::endl;
+    else
+        std::cout << "No" << std::endl;
+
+}
+
+//2 задание (ж) 3-4 week
+
+int main()
+{
+    float x, y;
+    std::cin >> x >> y;
+    if (((y > 1 - x) && (x < 1) && (y > 2 * x * x) && (y > 0)) || ((y > 1 - x) && (x < 1) && (y < 2 * x * x) && (y > 0) && (x > 0)))
+        std::cout << "Yes" << std::endl;
+    else
+        std::cout << "No" << std::endl;
+}
+
+//задание ( 4 )3-4 Week
+int main()
+{
+    int date;
+    do
+    {
+        system("cls");
+        std::cout << "Vvedite chislo (1 - 31): ";
+        std::cin >> date;
+        if (date > 0 && date < 32) break;
+    } while (true);
+    date = date % 7 - 1;
+    if (date > 7) date -= 7;
+    switch (date)
+    {
+    case 0: std::cout << "Vtornic" << std::endl; break;
+    case 1: std::cout << "Sreda" << std::endl; break;
+    case 2: std::cout << "GHItverg" << std::endl; break;
+    case 3: std::cout << "Pitnisa" << std::endl; break;
+    case 4: std::cout << "Sybbota" << std::endl; break;
+    case 5: std::cout << "Voskresene" << std::endl; break;
+    case 6: std::cout << "Ponedelic" << std::endl; break;
+    }
+    return 0;
+    
+
+}
+
+int main()
+{
+    int date, day;
+    do
+    {
+        system("cls");
+        std::cout << "Vvedite chislo (1 - 31): ";
+        std::cin >> date;
+        std::cout << "Vvedite nomer dnya (1 - 7): ";
+        std::cin >> day;
+        if (date > 0 && date < 32 && day > 0 && day < 8) break;
+    } while (true);
+    date = date % 7 + day - 1;
+    if (date > 7) date -= 7;
+    switch (date)
+    {
+    
+    case 0: std::cout << "ponedel'nik" << std::endl; break;
+    case 1: std::cout << "vtornik" << std::endl; break;
+    case 2: std::cout << "sreda" << std::endl; break;
+    case 3: std::cout << "chetverg" << std::endl; break;
+    case 4: std::cout << "pyatnitsa" << std::endl; break;
+    case 5: std::cout << "subbota" << std::endl; break;
+    case 6: std::cout << "voskresenye" << std::endl; break;
+    }
+}
