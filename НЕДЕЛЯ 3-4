@@ -56,6 +56,8 @@ int main()
 
 }
 
+//задание (5) 3-4 Week
+
 int main()
 {
     int date, day;
