@@ -1,0 +1,79 @@
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <array>
+//7 c a 9 7 10
+float B, C, D, F;
+struct Time
+{
+	int watch=2;
+	int minuts=3;
+	int seconds=4;
+
+}t;
+
+struct Complex
+{
+
+	double re; //вещественная часть
+
+	double im; //мнимая часть
+
+} c1, c2;
+
+float RingS(float R1, float R2, float& R , float& C, float& S)
+{
+	R = sqrt((R1 * R1) + (R2 * R2));
+	C = R1 / (sqrt((R1 * R1) + (R2 * R2)));
+	S = R2 / sqrt((R1 * R1) + (R2 * R2));
+	return 0;
+}
+
+struct Datchic
+{
+	float Min, Max;
+	float Error;
+	float MaxSpeed;
+}d1, d2;
+
+struct Planer
+{
+	float SpeedRotate, RadiusVinta, CoefTig;
+}p1;
+
+float Tiga(float A, float B, float C)
+{
+
+	std::cout << A * B * C; 
+	return 0;
+}
+
+int main() 
+{
+
+	std::cout << t.seconds << '\n';
+
+	std::cin >> c1.re >> c1.im >> c2.re >> c2.im;
+	RingS(c1.re, c1.im, B, C, D);
+	std::cout << B << "*(" << C<<"+i*" << D<<")";
+
+	std::cin >> d1.Min >> d1.Max >> d1.Error >> d1.MaxSpeed;
+	std::cin >> d2.Min >> d2.Max >> d2.Error >> d2.MaxSpeed;
+
+
+	
+
+	std::cout<< "9 задание    "<<(d1.Error * d2.Error) / 2<<'\n';
+
+	//7 pflfybt
+
+	if (d1.MaxSpeed < d2.MaxSpeed)
+		std::cout << d2.MaxSpeed<<'\n';
+	else
+		std::cout << d1.MaxSpeed<<'\n';
+	//10
+	std::cin >> p1.CoefTig >> p1.RadiusVinta >> p1.SpeedRotate;
+	Tiga(p1.SpeedRotate, p1.CoefTig, p1.RadiusVinta);
+
+
+}
