@@ -1,0 +1,93 @@
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <array>
+#include <string>
+
+//  1 2        14 (3geyrnf)
+//7 g a 9 8 10 c 19
+
+
+int main() 
+{
+	int Mass [20];
+	int Mass1[20];
+	int Sum,Sum1,Sum2,plus,minus,n;
+	char Poisk [50];
+	char Poisk1[50];
+	Sum = 0;
+	Sum1 = 0;
+	Sum2 = 0;
+	plus = 0;
+	minus = 0;
+	n = 0;
+	for (int i = 0; i < 20; i++)
+	{
+		std::cout<< (Mass[i] = (-20 + rand() % 41));
+		if (Mass[i] == 20)
+			std::cout << "   !  \n";
+		else
+			std::cout << "\n";
+		Mass1[i] = Mass[i];
+		if ((Mass[i] > 5))
+			Sum += Mass[i];
+		if ((Mass[i] < 7))
+			Sum1 += Mass[i];
+		if ((Mass[i] > 3))
+			Sum2 += Mass[i];
+		if ((Mass[i] > 0))
+			plus++;
+		if ((Mass[i] < 0))
+		{
+			minus++;
+			Mass[i] = 0;
+		}
+	}
+	std::cout <<"Answer 0: "  << Sum <<"\n";
+	std::cout << "Answer 1: " << Sum1<<"\n";
+	std::cout << "Answer 2: " << Sum2<<"\n";
+	std::cout << ">0:+ " << plus << "\n";
+	std::cout << "<0:- " << minus << "\n";
+
+	for (int i = 0; i < 20; i++)
+	{
+		std::cout << Mass[i]<<"\n";
+	}
+	std::cout <<"\n" << "\n";
+	for (int i = 0; i < 20; i++)
+	{
+		Mass[i] += Mass1[i];
+		std::cout << Mass[i] << "\n";
+	}
+
+	struct Film
+	{
+		float Stoimost;
+
+		char Film     [50];
+		char Righiser [50];
+		 
+		
+	};
+
+	Film films[10];
+	
+	for (int i = 1; i < 2; i++)
+	{
+	
+		std::cout << "Film: ";
+		std::cin >> films[i].Film;
+		std::cout << "Rigser: ";
+		std::cin >> films[i].Righiser;
+		std::cout << "Stoimost: ";
+		std::cin >> films[i].Stoimost;
+	}
+	std::cout << "Poiusk: ";
+	std::cin >> Poisk;
+
+	for (int i = 1; i < 2 ; i++)
+	{
+		if (Poisk == films[i].Righiser)
+		std::cout <<  films[i].Film << "\n" << films[i].Righiser <<"\n" << films[i].Stoimost<<"\n";
+		
+	}
