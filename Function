@@ -24,7 +24,7 @@ float RingS(float R1, float R2)
 входной, H, M и S — выходные параметры целого типа). Используя эту процедуру,
 найти количество часов, минут и секунд для пяти данных отрезков времени T1, T2,
 . . ., T5.*/
-int TimeToHMS(int T, int& H, int& M, int& S)
+/*int TimeToHMS(int T, int& H, int& M, int& S)
 {
 	H, M, S = 0;
 	
@@ -36,7 +36,7 @@ int TimeToHMS(int T, int& H, int& M, int& S)
 	H = T / 60;
 
 	return 0;
-}
+}*/
 
 /*Описать процедуру Minmax(X, Y), записывающую в переменную X минимальное из 
 значений X и Y, а в переменную Y — максимальное из этих значений (X и Y —
@@ -44,51 +44,27 @@ int TimeToHMS(int T, int& H, int& M, int& S)
 Используя четыре вызова этой процедуры, найти минимальное и максимальное из 
 данных чисел A, B, C, D.
 */
-	/*#include <stdio.h>
-#include <stdlib.h>
- 
-int Minmax (float *X,float *Y);
+#include <iostream>
+#include <algorithm>
+
+
+void Minmax(int& X, int& Y)
+{
+	if (Y < X)
+		std::swap(X, Y);
+}
+
+
 int main()
 {
-    int i;
-    float X,Y,A,B,C,D;
-    for(i=0;i<4;i++){
-    printf("Enter A:");
-    scanf("%f",&A);
-    printf("Enter B:");
-    scanf("%f",&B);
-    printf("Enter C:");
-    scanf("%f",&C);
-    printf("Enter D:");
-    scanf("%f",&D);
-    Minmax(&X,&Y);
-    printf("X=%g\nY=%g\n",&X,&Y);
+	int A, B, C, D;
+	std::cin >> A >> B >> C >> D;
+	MinMax(A, B);
+	MinMax(C, D);
+	MinMax(A, C);
+	MinMax(B, D);
+	std::cout << "\n\nMin = " << A << "\nMax = " << D << std::endl;
 }
-    return 0;
-}
-    int Minmax (float *X,float *Y)
-    {
-    float max,min,A,B,C,D;
-        if(A>B &&A>C && A>D)
-        max=A;
-        if(B>A && B>C && B>D)
-        max=B;
-        if(C>A && C>B && C>D)
-        max=C;
-        if(D>A && D>B && D>C)
-        max=D;
-        if(A<B && A<C && A<D)
-        min=A;
-        if(B<A && B<C && B<D)
-        min=B;
-        if(C<A && C<B && C<D)
-        min=C;
-        if(D<A && D<B && D<C)
-        min=D;
-        *X=min;
-        *Y=max;
-return 0;
-     }*/
 
 
 
@@ -98,7 +74,7 @@ y = 2x - 10, если x > 0
 y = 0, если x = 0
 y = 2 * |x| - 1, если x < 0
 */
-float Y(float X) 
+/*float Y(float X)
 { 
     if (X > 0)  return(2 * X - 10);
     else
@@ -134,13 +110,10 @@ int main()
 		
 		TimeToHMS(Tt[i], B, C, D);
 		std::cout << B << " " << C << " " << D << '\n';
-	}*/
+	}
 	//
     std::cin >> y;
     std::cout<< Y(y);
 
 
-}
-
-
-
+}*/
