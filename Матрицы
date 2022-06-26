@@ -1,0 +1,286 @@
+#include <iostream>
+#include <cmath>
+#include <cstdlib>
+#include <array>
+#include <string>
+
+ //7 Varic
+//1 4 7 9(a) 10 11(1,6)
+
+
+
+
+
+int x, y;
+int A, B;
+int Matrix[5][5];
+int Pogoda[2][20];
+int Matrix1[5][5];
+int Matrix2[5][5];
+int Ab[5];
+
+int P;//требутся для подсчёта диагонали
+//int S;
+int x1, x2;
+
+void Min(int X, int Y, int&Xx, int&Yy) 
+{
+	if (Matrix[X][Y] < Matrix[Xx][Yy])
+	{
+		Xx = X;
+		Yy = Y;
+	}
+
+}
+
+void Sum(int X, int Y, int& S)
+{
+	if (Matrix[Y][X] > 0) {
+		S += Matrix[Y][X];
+	}
+}
+
+struct RGB
+{
+	float R, G, B;
+
+}rgb[5][5];
+
+
+int main()
+{
+	P = 4;
+	
+	/*1. Преобразовать матрицу : элементы строки, в которой находится минимальный
+	элемент матрицы, заменить нулями.*/
+
+	for ( y = 0; y < 5; y++) 
+	{
+		for (x = 0; x < 5; x++) 
+		{
+			std::cout << (Matrix[y][x] = (-100 + rand() % 201))<<"\t";
+		
+		}
+		x = 0;
+		std::cout << "\n";
+	}
+	std::cout << "\n";
+
+	for (y = 0; y < 5; y++)
+	{
+		for (x = 0; x < 5; x++)
+		{
+			Min(x, y, A, B);
+
+		}
+		x = 0;
+	}
+
+	x = 0;
+	for (x = 0; x < 5; x++)
+	{
+		Matrix[B][x] = 0;
+
+	}
+	
+	for (y = 0; y < 5; y++)
+	{
+		for (x = 0; x < 5; x++)
+		std::cout << Matrix[y][x]<<"\t";
+
+		x = 0; std::cout << "\n";
+	}
+
+	std::cout << "\n"<< "\n"<< "\n";
+
+	/*4. В квадратной матрице найти сумму положительных элементов, лежащих на и выше 
+	главной диагонали и расположенных в чётных столбцах.*/
+	B = 0;
+	for (y = 0; y <= 4;y++)
+	{
+		
+			for (x = 0; x <= P; x++)
+			{
+				if ((x+1) % 2 == 0)
+				{
+					Sum(x, y, B);
+				}
+				std::cout << " X: " << x << " Y: " << y << " S: " << B << " M: " << Matrix[y][x] << " P: " << P << "\n";//как работает програмаа
+				
+			}
+		P--;
+		x = 0;
+	}
+
+	std::cout <<"Answer: " << B;//C++ офигеннно надежность как у швецарских часов!!!!!
+	
+	std::cout << "\n" << "\n" << "\n";
+	
+
+	/* 7. Дана матрица. Элементы первой строки — количество осадков в соответствующий 
+	день, второй строки — сила ветра в этот день. Найти, был ли в эти дни ураган? 
+	(ураган — когда самый сильный ветер был в самый дождливый день).*/
+	for (y = 0; y < 2; y++)
+	{
+		for (x = 0; x < 20; x++)
+		{
+			std::cout << (Pogoda[y][x] = (rand() % 101)) << "\t";
+
+		}
+		x = 0;
+		std::cout << "\n";
+	}
+	A = 0;
+	B = 0;
+	std::cout << "\n";
+	for ( x = 0; x < 28; x++) 
+	{
+		
+		if (Pogoda[0][x]>A) 
+		{
+			A = Pogoda[0][x]; 
+			x1 = x;
+			
+		}
+		
+		if (Pogoda[1][x]>B)
+		{
+			B = Pogoda[1][x];
+			x2 = x;
+			
+		}
+		std::cout << Pogoda[0][x] << "\t" << x1 << "\t" << Pogoda[1][x] << "\t" << x2 << "\n";
+	}
+
+	if (x1 == x2)
+		std::cout << "Yes "<< x1<<" "<< x2;
+	else
+		std::cout << "No";
+
+	/*	Объявить, реализовать заполнение данными с клавиатуры ИЛИ из файла и вывести 
+	на экран матрицу, описывающую следующие сущности. 
+		 Двумерное изображение. Изображение состоит из пикселей. Каждый пиксель 
+	характеризуется яркостью цветовых каналов: красный, синий, зелёный. */
+
+	std::cout << "\n" << "\n" << "\n";
+
+	/*for (y = 0; y < 5; y++)
+	{
+		for (x = 0; x < 5; x++)
+		{
+			std::cout << x << " " << y << 'R';
+			std::cin >> rgb[y][x].R;
+			std::cout << x << " " << y << 'G';
+			std::cin >> rgb[y][x].G;
+			std::cout << x << " " << y << 'B';
+			std::cin >> rgb[y][x].B;
+		}
+		x = 0;
+		std::cout << "\n";
+	}
+
+	std::cout << "\n" << "\n" << "\n";
+
+	for (y = 0; y < 5; y++)
+	{
+		for (x = 0; x < 5; x++)
+			std::cout << " R:"<< rgb[y][x].R <<" G:"<< rgb[y][x].G<<" B:"<< rgb[y][x].B << "\t";
+
+		x = 0; std::cout << "\n";
+	}*/
+
+	/*10. Реализовать сложение, вычитание, умножение, транспонирование матриц 
+	(разрешается фиксированный размер матриц).*/
+
+	std::cout << "\n" << "\n" << "\n";
+
+	for (y = 0; y < 5; y++)
+	{
+		for (x = 0; x < 5; x++)
+		{
+			std::cout << (Matrix1[y][x] = Matrix[y][x] + Matrix[y][x])<<"\t";
+		}
+		x = 0;
+		std::cout << "\n";
+	}
+
+	std::cout << "\n" << "\n" << "\n";
+
+	
+
+	for (y = 0; y < 5; y++)
+	{
+		for (x = 0; x < 5; x++)
+		{
+			std::cout << (Matrix2[y][x] = Matrix1[y][x] - Matrix[y][x]) << "\t";
+		}
+		x = 0;
+		std::cout << "\n";
+	}
+
+	std::cout << "\n" << "\n" << "\n";
+
+	for (y = 0; y < 5; y++)
+	{
+		for (x = 0; x < 5; x++)
+		{
+			std::cout << (Matrix1[y][x] = Matrix[x][y] )<< "\t";
+		}
+		x = 0;
+		std::cout << "\n";
+	}
+
+	std::cout << "\n" << "\n" << "\n";
+
+	for (y = 0; y < 5; y++)
+	{
+		for (x = 0; x < 5; x++)
+		{
+			std::cout << (Matrix[y][x] = Matrix1[y][x] * Matrix2[y][x]) << "\t";
+		}
+		x = 0;
+		std::cout << "\n";
+	}
+	//11.1
+	A = 0;
+	B = 0;
+
+	std::cout << "\n" << "\n" << "\n";
+
+	for (y = 0; y < 5; y++)
+	{
+		for (x = 0; x < 5; x++)
+		{
+			A += abs(Matrix[y][x]);
+		}
+		std::cout << A << "\t";
+		x = 0;
+		A = 0;
+	}
+
+	//11.6
+
+	std::cout << "\n" << "\n" << "\n";
+
+	for (y = 0; y < 5; y++)
+	{
+		for (x = 0; x < 5; x++)
+		{
+			A += abs(Matrix[y][x]);
+		}
+		std::cout << (Ab[y]=A) << "\t";
+		x = 0;
+		A = 0;
+	}
+	std::cout << "\n" << "\n" << "\n";
+	for (x = 0; x < 5; x++)
+	{
+		for (y = 0; y < 5; y++)
+		{
+			A += abs(Matrix[y][x]);
+		}
+		std::cout << (Ab[x]*=A) << "\t";
+		y = 0;
+		A = 0;
+	}
+}
